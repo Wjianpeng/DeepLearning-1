@@ -1,12 +1,12 @@
 function [ W1, W2 ] = MultiClassNumber( W1, W2, X, D )
 %UNTITLED 이 함수의 요약 설명 위치
 %   자세한 설명 위치
-    alpha = 0.01;
+    alpha = 0.9;
     
     N = 5;
     for k = 1:N
-        x = reshape(X(:,:,k),25,1)
-        d = D(k)';
+        x = reshape(X(:,:,k),25,1);
+        d = D(k,:)';
         v1 = W1 * x;
         y1 = Sigmoid(v1);
         

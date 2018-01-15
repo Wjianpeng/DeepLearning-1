@@ -6,13 +6,13 @@ function [ W1, W2 ] = MultiClass( W1, W2, X, D )
     
     for k = 1:N
         x = X(k, :)';
-        d = D(k);
+        d = D(k,:)';
         v1 = W1 * x;
         y1 = Sigmoid(v1);
         
         v2 = W2 * y1;
-        y2 = Softmax(v2);
-        
+        y2 = softmax(v2);
+       
         e2 = d - y2;
         delta2 = e2;
         

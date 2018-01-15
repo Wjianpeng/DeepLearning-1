@@ -51,7 +51,7 @@ D = [1	0	0	;
 W1 = 2 * rand(5, 4) -1;
 W2 = 2 * rand(3, 5) -1;
 
-for epoch = 1: 3000
+for epoch = 1: 10000
     [W1 W2] = MultiClass(W1, W2, X, D);
 end
 
@@ -62,6 +62,6 @@ X = [2 2 2 1;];
 v1 = W1 * X';
 y1 = Sigmoid(v1);
 v2 = W2 * y1;
-y2 = Softmax(v2);
+y2 = softmax(v2);
 
 disp('y2='),disp(y2);
